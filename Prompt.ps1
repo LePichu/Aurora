@@ -2,7 +2,7 @@ Function Prompt {
     Write-Host ""
 
     $ARR = @()
-    
+
     $MAP = @{
         "Cargo.toml" = "🦀"
         "deno.json" = "🦕"
@@ -12,6 +12,8 @@ Function Prompt {
         "shard.yaml" = '🔮'
         "shard.yml" = '🔮'
         "package.json" = '📦'
+        # Language by @TheNachoBIT
+        "Nucleus.toml" = '☢️'
     }
     
     ForEach ($KEY in $MAP.Keys) {
