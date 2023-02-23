@@ -1,5 +1,13 @@
+$global:COLDBOOT = $true
+
 Function Prompt {
-    Write-Host ""
+    if($global:COLDBOOT -eq $false) {
+	    Write-Host " "
+    }
+    
+    if($global:COLDBOOT) {
+	    $global:COLDBOOT = $false	
+    }
 
     $ARR = @()
 
@@ -27,7 +35,7 @@ Function Prompt {
     $LANGS = ""
 
     if($ARR.Count -gt 0) {
-        $LANGS += "via "
+        $LANGS += " via "
 
         if($ARR.Count -eq 1) {
             $LANGS += $ARR
@@ -43,6 +51,8 @@ Function Prompt {
     } 
 
     Write-Host "LePichu@Toaster " -NoNewLine -ForegroundColor DarkCyan
+    Write-Host "in " -NoNewLine 
+    Write-Host "$(Split-Path -Leaf (Get-Location))" -NoNewLine -ForegroundColor Blue
     Write-Host $LANGS 
     Write-Host "$>" -NoNewline -ForegroundColor Blue
 
