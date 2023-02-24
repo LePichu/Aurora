@@ -58,3 +58,15 @@ Function Prompt {
 
     " " 
 }
+
+# Overwrite Clear function to make sure it doesn't leave an extra space for prompt
+# clear-host is 6x slower than /bin/clear on my phone so this is why I do this
+Function clear {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSProvideCommentHelp", "", Justification="/bin/clear is faster than Clear-Host")]
+    $global:COLDBOOT = $true
+    if($IsLinux) {
+        & ("/bin/clear")
+    } else {
+        Clear-Host
+    }
+}
