@@ -19,6 +19,7 @@ Function Prompt {
         "go.mod" = "🐹"
         "shard.yaml" = '🔮'
         "shard.yml" = '🔮'
+        "Gemfile" = '💎'
         "package.json" = '📦'
         # Language by @TheNachoBIT
         "Nucleus.toml" = '☢️'
