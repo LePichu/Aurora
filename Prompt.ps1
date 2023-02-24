@@ -42,6 +42,41 @@ Function Prompt {
 
         # Language by @TheNachoBIT
         "Nucleus.toml" = '☢️'
+	
+	# haskell
+	"stack.yaml" = "λ"
+	
+	# ocaml
+	"dune" = "🐫"
+	"_opam" = "🐫"
+	"dune-project" = "🐫"
+	"esy.lock" = "🐫"
+	
+	# purescript
+	"spago.dhall" = "<=>"
+	
+	# v
+	"v.mod" = "V"
+	"vpkg.json" = "V"
+	".vpkg-lock.json" = "V"
+	
+	# zig
+	".zig" = "↯"
+	
+	# scala
+	"build.sbt" = "🆂"
+	".scalaenv" = "🆂"
+	".sbtenv" = "🆂"
+	".metals" = "🆂"
+
+	# lua
+	".lua-version" = "🌙"
+	"lua" = "🌙"
+	
+	# elm
+	"elm.json" = "🌳"
+	"elm-package.json" = "🌳"
+	".elm-version" = "🌳"
     }
 
     ForEach ($KEY in $MAP.Keys) {
