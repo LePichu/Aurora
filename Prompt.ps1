@@ -13,6 +13,7 @@ Function Prompt {
 
     $MAP = @{
         "Cargo.toml" = "🦀"
+        "CMakeLists.txt" = "🔺"
 
         "deno.json" = "🦕"
         "deno.jsonc" = "🦕"
@@ -24,7 +25,11 @@ Function Prompt {
         "pubspec.yaml" = '🎯'
         "pubspec.yml" = '🎯'
 
+        "$(Split-Path -Leaf (Get-Location)).fsproj" = '🤖'
+        "$(Split-Path -Leaf (Get-Location)).csproj" = '🤖'
+
         "go.mod" = "🐹"
+        "pyproject.toml" = "🐍"
 
         "shard.yaml" = '🔮'
         "shard.yml" = '🔮'
@@ -59,7 +64,7 @@ Function Prompt {
         }
 
         if($ARR.Count -eq 3) {
-            $LANGS += $ARR[0] + " , " + $ARR[1] + " & " + $ARR[2]
+            $LANGS += $ARR[0] + ", " + $ARR[1] + " & " + $ARR[2]
         }
     } 
 
