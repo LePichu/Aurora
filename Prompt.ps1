@@ -60,7 +60,7 @@ Function Prompt {
 	"vpkg.json" = "V"
 	".vpkg-lock.json" = "V"
 	
-	# zip
+	# zig
 	".zig" = "↯"
 	
 	# scala
@@ -76,8 +76,7 @@ Function Prompt {
 	# elm
 	"elm.json" = "🌳"
 	"elm-package.json" = "🌳"
-	".elm-version" = "🌳"	
-	
+	".elm-version" = "🌳"
     }
 
     ForEach ($KEY in $MAP.Keys) {
