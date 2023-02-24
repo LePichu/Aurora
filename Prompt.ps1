@@ -13,14 +13,26 @@ Function Prompt {
 
     $MAP = @{
         "Cargo.toml" = "🦀"
+
         "deno.json" = "🦕"
         "deno.jsonc" = "🦕"
+        
         "gleam.toml" = "✨"
+        "mix.exs" = '🩸'
+        "rebar.config" = '☎'
+
+        "pubspec.yaml" = '🎯'
+        "pubspec.yml" = '🎯'
+
         "go.mod" = "🐹"
+
         "shard.yaml" = '🔮'
         "shard.yml" = '🔮'
         "Gemfile" = '💎'
+        
         "package.json" = '📦'
+        "yarn.lock" = '📦'
+
         # Language by @TheNachoBIT
         "Nucleus.toml" = '☢️'
     }
