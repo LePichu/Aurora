@@ -3,80 +3,80 @@ $global:COLDBOOT = $true
 $NAME = "$Env:USERNAME@$Env:COMPUTERNAME"
 
 Function Prompt {
-    if($global:COLDBOOT -eq $false) {
-	    Write-Host " "
+    if ($global:COLDBOOT -eq $false) {
+        Write-Host " "
     }
     
-    if($global:COLDBOOT) {
-	    $global:COLDBOOT = $false	
+    if ($global:COLDBOOT) {
+        $global:COLDBOOT = $false	
     }
 
     $ARR = @()
 
     $MAP = [Ordered]@{
-        "Cargo.toml" = "🦀"
-        "CMakeLists.txt" = "🔺"
+        "Cargo.toml"                                = "🦀"
+        "CMakeLists.txt"                            = "🔺"
 
-        "deno.json" = "🦕"
-        "deno.jsonc" = "🦕"
+        "deno.json"                                 = "🦕"
+        "deno.jsonc"                                = "🦕"
         
-        "gleam.toml" = "✨"
-        "mix.exs" = '🩸'
-        "rebar.config" = '☎'
+        "gleam.toml"                                = "✨"
+        "mix.exs"                                   = '🩸'
+        "rebar.config"                              = '☎'
 
-        "pubspec.yaml" = '🎯'
-        "pubspec.yml" = '🎯'
+        "pubspec.yaml"                              = '🎯'
+        "pubspec.yml"                               = '🎯'
 
         "$(Split-Path -Leaf (Get-Location)).fsproj" = '🤖'
         "$(Split-Path -Leaf (Get-Location)).csproj" = '🤖'
 
-        "go.mod" = "🐹"
-        "pyproject.toml" = "🐍"
+        "go.mod"                                    = "🐹"
+        "pyproject.toml"                            = "🐍"
 
-        "shard.yaml" = '🔮'
-        "shard.yml" = '🔮'
-        "Gemfile" = '💎'
+        "shard.yaml"                                = '🔮'
+        "shard.yml"                                 = '🔮'
+        "Gemfile"                                   = '💎'
         
-        "package.json" = '📦'
-        "yarn.lock" = '📦'
+        "package.json"                              = '📦'
+        "yarn.lock"                                 = '📦'
 
         # Language by @TheNachoBIT
-        "Nucleus.toml" = '☢️'
+        "Nucleus.toml"                              = '☢️'
 	
-	# haskell
-	"stack.yaml" = "λ"
+        # haskell
+        "stack.yaml"                                = "λ"
 	
-	# ocaml
-	"dune" = "🐫"
-	"_opam" = "🐫"
-	"dune-project" = "🐫"
-	"esy.lock" = "🐫"
+        # ocaml
+        "dune"                                      = "🐫"
+        "_opam"                                     = "🐫"
+        "dune-project"                              = "🐫"
+        "esy.lock"                                  = "🐫"
 	
-	# purescript
-	"spago.dhall" = "<=>"
+        # purescript
+        "spago.dhall"                               = "<=>"
 	
-	# v
-	"v.mod" = "V"
-	"vpkg.json" = "V"
-	".vpkg-lock.json" = "V"
+        # v
+        "v.mod"                                     = "V"
+        "vpkg.json"                                 = "V"
+        ".vpkg-lock.json"                           = "V"
 	
-	# zig
-	".zig" = "↯"
+        # zig
+        ".zig"                                      = "↯"
 	
-	# scala
-	"build.sbt" = "🆂"
-	".scalaenv" = "🆂"
-	".sbtenv" = "🆂"
-	".metals" = "🆂"
+        # scala
+        "build.sbt"                                 = "🆂"
+        ".scalaenv"                                 = "🆂"
+        ".sbtenv"                                   = "🆂"
+        ".metals"                                   = "🆂"
 
-	# lua
-	".lua-version" = "🌙"
-	"lua" = "🌙"
+        # lua
+        ".lua-version"                              = "🌙"
+        "lua"                                       = "🌙"
 	
-	# elm
-	"elm.json" = "🌳"
-	"elm-package.json" = "🌳"
-	".elm-version" = "🌳"
+        # elm
+        "elm.json"                                  = "🌳"
+        "elm-package.json"                          = "🌳"
+        ".elm-version"                              = "🌳"
     }
 
     ForEach ($KEY in $MAP.Keys) {
@@ -89,18 +89,18 @@ Function Prompt {
 
     $LANGS = ""
 
-    if($ARR.Count -gt 0) {
+    if ($ARR.Count -gt 0) {
         $LANGS += " via "
 
-        if($ARR.Count -eq 1) {
+        if ($ARR.Count -eq 1) {
             $LANGS += $ARR
         }
 
-        if($ARR.Count -eq 2) {
+        if ($ARR.Count -eq 2) {
             $LANGS += $ARR[0] + " & " + $ARR[1]
         }
 
-        if($ARR.Count -eq 3) {
+        if ($ARR.Count -eq 3) {
             $LANGS += $ARR[0] + ", " + $ARR[1] + " & " + $ARR[2]
         }
     } 
@@ -117,11 +117,12 @@ Function Prompt {
 # Overwrite Clear function to make sure it doesn't leave an extra space for prompt
 # clear-host is 6x slower than /bin/clear on my phone so this is why I do this
 Function clear {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSProvideCommentHelp", "", Justification="/bin/clear is faster than Clear-Host")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSProvideCommentHelp", "", Justification = "/bin/clear is faster than Clear-Host")]
     $global:COLDBOOT = $true
-    if($IsLinux) {
+    if ($IsLinux) {
         & ("/bin/clear")
-    } else {
+    }
+    else {
         Clear-Host
     }
 }
