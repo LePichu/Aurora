@@ -11,7 +11,7 @@ Function Prompt {
 
     $ARR = @()
 
-    $MAP = @{
+    $MAP = [Ordered]@{
         "Cargo.toml" = "🦀"
         "CMakeLists.txt" = "🔺"
 
@@ -41,14 +41,14 @@ Function Prompt {
         # Language by @TheNachoBIT
         "Nucleus.toml" = '☢️'
     }
-    
+
     ForEach ($KEY in $MAP.Keys) {
         If (Test-Path "./$KEY") {
             $ARR += $MAP[$KEY]
         }
     }
 
-    $ARR = $ARR | Sort-Object -Unique
+    $ARR = $ARR | Select-Object -Unique
 
     $LANGS = ""
 
