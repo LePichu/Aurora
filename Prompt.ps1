@@ -70,7 +70,7 @@ Function Prompt {
         }
     } 
 
-    Write-Host $NAME -NoNewLine -ForegroundColor DarkCyan
+    Write-Host "$NAME " -NoNewLine -ForegroundColor DarkCyan
     Write-Host "in " -NoNewLine 
     Write-Host "$(Split-Path -Leaf (Get-Location))" -NoNewLine -ForegroundColor Blue
     Write-Host $LANGS 
