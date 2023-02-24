@@ -48,7 +48,7 @@ Function Prompt {
         }
     }
 
-    $ARR = $ARR | Select-Object -Unique
+    $ARR = $ARR | Sort-Object -Unique
 
     $LANGS = ""
 
