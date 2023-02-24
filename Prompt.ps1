@@ -42,6 +42,42 @@ Function Prompt {
 
         # Language by @TheNachoBIT
         "Nucleus.toml" = '☢️'
+	
+	# haskell
+	"stack.yaml" = "λ"
+	
+	# ocaml
+	"dune" = "🐫"
+	"_opam" = "🐫"
+	"dune-project" = "🐫"
+	"esy.lock" = "🐫"
+	
+	# purescript
+	"spago.dhall" = "<=>"
+	
+	# v
+	"v.mod" = "V"
+	"vpkg.json" = "V"
+	".vpkg-lock.json" = "V"
+	
+	# zip
+	".zig" = "↯"
+	
+	# scala
+	"build.sbt" = "🆂"
+	".scalaenv" = "🆂"
+	".sbtenv" = "🆂"
+	".metals" = "🆂"
+
+	# lua
+	".lua-version" = "🌙"
+	"lua" = "🌙"
+	
+	# elm
+	"elm.json" = "🌳"
+	"elm-package.json" = "🌳"
+	".elm-version" = "🌳"	
+	
     }
 
     ForEach ($KEY in $MAP.Keys) {
@@ -70,7 +106,7 @@ Function Prompt {
         }
     } 
 
-    Write-Host "$NAME " -NoNewLine -ForegroundColor DarkCyan
+    Write-Host $NAME -NoNewLine -ForegroundColor DarkCyan
     Write-Host "in " -NoNewLine 
     Write-Host "$(Split-Path -Leaf (Get-Location))" -NoNewLine -ForegroundColor Blue
     Write-Host $LANGS 
