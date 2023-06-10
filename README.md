@@ -1,4 +1,4 @@
-# Pichu Prompt
+# Aurora
 A Tiny, Custom, Starship-like prompt for PowerShell running on my systems.
 
 ## Usage
