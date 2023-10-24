@@ -32,6 +32,7 @@ Function Prompt {
 
         "go.mod"                                    = "🐹"
         "pyproject.toml"                            = "🐍"
+	"requirements.txt"                          = "🐍"
 
         "shard.yaml"                                = '🔮'
         "shard.yml"                                 = '🔮'
